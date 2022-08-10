@@ -21,7 +21,7 @@ approach.
 [Deployment Guide](docs/Guide.md) provides detailed information about
 deployment options and custom configurations.
 
-[Howto](docs/Howto.md) provides a list of required and optional steps
+[Howto](/common/deployment/docs/Howto.md) provides a list of required and optional steps
 that should be performed during the deployment.  
 
 Installation of CWL-Airflow on a dedicated host is relatively simple and 

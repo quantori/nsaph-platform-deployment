@@ -54,7 +54,7 @@ The following options can be configured:
     * What [user projects](#configuring-user-projects) 
       are installed into the runtime workflow execution environment
     * Username and password used by Airflow administrator
-    * [Public Airflow URL](#overriding-base_url) 
+    * [Public Airflow URL](#overriding-base-url) 
                           
 ## Selecting base configuration.
 
@@ -75,10 +75,10 @@ repeatability, listed in a special file named `.env`. This package
 includes four template environment files, corresponding to the 
 configurations above:
 
-| Configurations  | Existing PostgreSQL | New Container with PostgreSQL |
-|---|---------------------|-------------------------------|
-|**With Conda** | [.env_example_nopostgres_conda](../.env_example_nopostgres_conda) | [.env_example_postgres_conda](../.env_example_postgres_conda) |
-|**Without Conda** | [.env_example_nopostgres_noconda](../.env_example_nopostgres_noconda) | [.env_example_postgres_noconda](../.env_example_postgres_noconda) |
+| Configurations  | Existing PostgreSQL                                                  | New Container with PostgreSQL |
+|---|----------------------------------------------------------------------|-------------------------------|
+|**With Conda** | [.env_example_nopostgres_conda](https://github.com/NSAPH-Data-Platform/nsaph-platform-deployment/blob/master/.env_example_nopostgres_conda)       | [.env_example_postgres_conda](https://github.com/NSAPH-Data-Platform/nsaph-platform-deployment/blob/master/.env_example_postgres_conda) |
+|**Without Conda** | [.env_example_nopostgres_noconda](https://github.com/NSAPH-Data-Platform/nsaph-platform-deployment/blob/master/.env_example_nopostgres_noconda) | [.env_example_postgres_noconda](https://github.com/NSAPH-Data-Platform/nsaph-platform-deployment/blob/master/.env_example_postgres_noconda) |
 
 The first step will always be to select the appropriate configuration
 and copying corresponding environment file into `.env`, e.g.,
@@ -115,7 +115,7 @@ variable `AIRFLOW_CONDA_ENV` in the `.env` file:
     AIRFLOW_CONDA_ENV="mycondaenv"
 
 Alternatively, but less preferably, you can replace 
-[conda_default.yml](../project/conda_default.yml).
+[conda_default.yml](/common/deployment/conda_default.yml).
    
 ### Managing multiple Conda environments
 
@@ -139,7 +139,7 @@ and restart webserver **_without_** rebuilding it.
 ### Python requirements
 
 Python requirements should be placed in the 
-[requirements.txt](../requirements.txt) file.
+[requirements.txt](/common/deployment/requirements.txt) file.
 
 ### R libraries
 
@@ -149,9 +149,9 @@ therefore R requirements should be part of your
                                                                               
 If any R packages have to be installed from GitHub, they should be
 listed in
-[r-github-packages.txt](../r-github-packages.txt)
+[r-github-packages.txt](/common/deployment/r-github-packages.txt)
 These packages are installed directly from GitHub 
-by [install_conda script](../install_conda.sh) script.
+by [install_conda script](/common/deployment/install_conda.txt) script.
 Make sure, that there is an 
 end-of-line at the end of the file.
 
@@ -187,7 +187,7 @@ install the projects in the specific order. To enforce the order,
 create a file called `projects.lst` and place it in `project` folder.
 List a single subfolder of a python project on each line of this file.
 If there is no file `projects.lst`, then teh projects will be installed
-in an arbitrary order. See [install_projects.sh](../install_projects.sh) 
+in an arbitrary order. See [install_projects.sh](/common/deployment/install_projects.txt) 
 for details.
 
 
@@ -336,7 +336,7 @@ and edit the following lines in your `.env` file:
 If you created custom docker network, your PostgreSQL server address 
 is defined by `gateway` option in `docker network create` command.
 By default, it is set to `172.16.238.1` in the
-[docker-compose](../docker-compose.yaml). Alternatively, sometimes, it 
+[docker-compose](/common/deployment/docker-compose.yaml). Alternatively, sometimes, it 
 will be `172.17.0.1` or `172.18.0.1`.
 
     export POSTGRE_SERVER=172.16.238.1  

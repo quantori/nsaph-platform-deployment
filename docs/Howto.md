@@ -49,7 +49,7 @@ with your custom options, you will need to follow these steps:
    
         cp .env_example_postgres_noconda .env
 7. **[Optional]** Adjust environment settings:
-   * [Base URL](Configuration.md#overriding-base_url)
+   * [Base URL](Configuration.md#overriding-base-url)
    * How Airflow connects to PostgreSQL
    * [Airflow admin username and password](Configuration.md#airflow-admin-username-and-password)
    * [Anything else](Configuration.md#full-list-of-available-environment-variables)
